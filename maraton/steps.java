@@ -17,26 +17,33 @@ public class steps {
             StringTokenizer st = new StringTokenizer(input);
             
             
-            int a=Integer.parseInt(st.nextToken());
-            int b=Integer.parseInt(st.nextToken());
+            int numa=Integer.parseInt(st.nextToken());
+            int numb=Integer.parseInt(st.nextToken());
             
-            int delta = b-a;
+            int delta = numb-numa;
             
             if(delta<4)
                 System.out.println(delta);
             else{
-                delta -= 2;
-                int step=1;
+                int a=3;
+                int b=4;
+                int n=2;
+                int anteriorN = 1;
+                int m=1;
                 while(delta>0){
-                    if(delta <= step){
-                        delta-=step;
-                        contador++;
-                        step++;
+                    if(delta>= a && delta <=b){
+                        System.out.println(b-m);
+                        break;
                     }else{
-                        step--;
+                    	m += anteriorN;
+                    	if(anteriorN == n)
+                    		n+=1;
+                    	else
+                    		anteriorN = n;
+                    	a += anteriorN;
+                    	b += n;
                     }
                 }
-                System.out.println(contador);
             }
         }
     }
