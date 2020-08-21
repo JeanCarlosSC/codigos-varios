@@ -5,7 +5,7 @@ import java.util.StringTokenizer;
  *
  * @author Jean Carlos Santoya Cabrera jeancarlosodi@gmail.com
  */
-public class Main {
+public class SumaInversa {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         
