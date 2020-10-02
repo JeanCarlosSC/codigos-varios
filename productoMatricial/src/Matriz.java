@@ -25,14 +25,14 @@ public class Matriz {
         int contador = 0;
 
         //------------------------------------------------------------
-        for (int i = 0; i < filasA; i++) {//(11columnasAcolumnasB + 4columnasB + 2)filasA + 2filasA + 2
+        for (int i = 0; i < filasA; i++) {//(13columnasAcolumnasB + 4columnasB + 2)filasA + 2filasA + 2
             contador += 2;
-            for (int j = 0; j < columnasB; j++) {//(11columnasA + 2)columnasB + 2 columnasB + 2
+            for (int j = 0; j < columnasB; j++) {//(13columnasA + 2)columnasB + 2 columnasB + 2
                 contador += 2;
-                for (int n = 0; n < columnasA; n++) {//9columnasA + 2columnasA + 2
+                for (int n = 0; n < columnasA; n++) {//11columnasA + 2columnasA + 2
                     contador += 2;
-                    result[i][j] += matrizA[i][n] * matrizB[n][j];//9
-                    contador += 9;
+                    result[i][j] += matrizA[i][n] * matrizB[n][j];//11
+                    contador += 11;
                 }
                 contador += 2;
             }

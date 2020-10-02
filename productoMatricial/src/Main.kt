@@ -4,7 +4,7 @@ fun main() {
     val matrizFinal = Matriz.calcularProducto( matrizA, matrizB )
 
     val contador = Matriz.calcularOperacionesElementalesDelProducto( matrizA, matrizB )
-    val formula = ((11*matrizB.size + 4)*matrizB[0].size + 4)*matrizA.size + 2
+    val formula = ((13*matrizB.size + 4)*matrizB[0].size + 4)*matrizA.size + 2
 
     matrizFinal.print()
     println("Operaciones elementales con fórmula: $formula\nOperaciones elementales por contador: $contador")
