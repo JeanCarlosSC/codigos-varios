@@ -8,12 +8,12 @@ fun main() {
 
     //caso 1, descendente 100, 99, ..., 2, 1 siempre ejecuta las instrucciones del if
     a = IntArray(n) {n - it}
-    formulaCaso1 = 10*((n*n - n )/ 2) + 4*n - 2
+    formulaCaso1 = 12*((n*n - n )/ 2) + 6*n - 3
     println("---------- Caso 1 ---------- \nPor contador: ${Algoritmo.calcular(n, a)}\nPor fórmula: $formulaCaso1")
 
     //caso 2, ascendente 0, 1, 2, ..., 98, 99 nunca ejecuta las instrucciones del if
     a = IntArray(n) {it}
-    formulaCaso2 = 5*((n*n - n )/ 2) + 4*n - 2
+    formulaCaso2 = 5*((n*n - n )/ 2) + 6*n - 3
     println("---------- Caso 2 ---------- \nPor contador: ${Algoritmo.calcular(n, a)}\nPor fórmula: $formulaCaso2")
 
     //caso 3, random 4, 5, 2, 6, 7, 4, 5, 8, 9 las ejecuta la mitad de las veces.

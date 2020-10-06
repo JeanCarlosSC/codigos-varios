@@ -25,36 +25,38 @@ public class Algoritmo {
             = n^2 - 2n + 1 - (n - 1)(n - 2)/2
             = (n^2 - n) / 2
 
-         resultado final: ((n^2 - n) / 2)*10 + 4*(n-1) + 2
-            = ((n^2 - n) / 2)*10 + 4*n - 2
+         resultado final: ((n^2 - n) / 2)*12 + 6*(n-1) + 3
+            = (n^2 - n)*6 + 6*n - 3
+            = 6n^2 -6n + 6n - 3
+            = 6n^2 - 3
 
-         evaluado en n=100: ((10000 - 100) / 2)*10 + 400 - 2 = 49898
+         evaluado en n=100: 60000 - 3 = 59997
 */
 /*      f = (n^2 - n) / 2
             CASO 1 ->  10*f + 4*n - 2
             CASO 2 ->  5*f + 4*n - 2
             CASO 3 -> (caso1 - caso2) / 2
 
-        RESULTADO GENERALIZADO: (5x + 5)*f + 4*n - 2
+        RESULTADO GENERALIZADO: (7x + 5)*f + 6*n - 3
 
         x = when(CASO){
             1 -> 1
             2 -> 0
         }
  */
-        for(int i=0; i < n-1; i++) { // (5x + 5)*f + 4*n - 2
-            c+=2;
-            for(int j = i + 1; j < n; j++) { // (5x + 5)*f + 2
-                c+=2;
-                if(a[i] > a[j]) {// 5x
+        c++;
+        for(int i=0; i < n-1; i++) { // (7x + 5)*f + 6*n - 3
+            c+=5;
+            for(int j = i + 1; j < n; j++) { // (7x + 5)*f + 3
+                c+=5;
+                if(a[i] > a[j]) {// 7x
                     t    = a[i]; //2
                     a[i] = a[j]; //3
                     a[j] = t;    //2
-                    c+=5;
+                    c+=7;
                 }
-                c+=3;
             }
-            c+=2;
+            c++;
         }
         c+=2;
 
