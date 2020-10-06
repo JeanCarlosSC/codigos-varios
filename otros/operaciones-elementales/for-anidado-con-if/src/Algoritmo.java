@@ -47,7 +47,7 @@ public class Algoritmo {
         c++;
         for(int i=0; i < n-1; i++) { // (7x + 5)*f + 6*n - 3
             c+=5;
-            for(int j = i + 1; j < n; j++) { // (7x + 5)*f + 3
+            for(int j = i + 1; j < n; j++) { // (7x + 5)*f + 3 //x es 1 en el caso 1, en el peor es 0
                 c+=5;
                 if(a[i] > a[j]) {// 7x
                     t    = a[i]; //2
