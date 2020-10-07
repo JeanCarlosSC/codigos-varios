@@ -29,7 +29,9 @@ fun main(){
     //calculo el número convertido
     if(base2 == 10.0)
         numeroConvertido = peso.toInt().toString()
-    else {
+    else if(numero == "0")
+        numeroConvertido = "0"
+    else{
         var posicion = 50.0 // itera desde 50 posiciones a la izquierda
         var agrega = false //no añade los ceros de la izquierda hasta que se añada algún valor distinto de cero
         var valor = 0.0 //el valor del número que se va a añadir en caso de que sea necesario. por ej: valor=15 significa E
