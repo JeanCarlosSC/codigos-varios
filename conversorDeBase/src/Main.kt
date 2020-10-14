@@ -9,7 +9,7 @@ fun main(){
     val base2 = readLine()!!.toDouble()
 
     print("Ingrese el número: ")
-    var numero = readLine()!!
+    val numero = readLine()!!
 
     if(base1<2 || base1>36){
         println("Valor de la base del número a convertir está fuera del rango (2 hasta 36)")
@@ -18,32 +18,35 @@ fun main(){
         println("Valor de la base a la que desea convertir está fuera de rango (2 hasta 36)")
         main()
     }else{
+        //imprime el resultado
+        println("El número $numero de base ${base1.toInt()} a base ${base2.toInt()} es: ${convertir(numero, base1, base2)}")
+    }
+}
 
-        var numeroConvertido = ""
-        var peso = 0.0 //es el valor del número en base decimal
+fun convertir(numero: String, base1: Double, base2: Double): String {
+    var numeroConvertido = ""
+    var peso = 0.0 //es el valor del número en base decimal
 
-        //calculo el valor del peso
-        if(base1 == 10.0){
-            peso = numero.toDouble()
-        }else {
-            var i= numero.length;
-            while(i>0) {
-                i--;
-                //numbers in 48 .. 57, upper case in 65 .. 89, down case in 97 .. 122
-                peso += when(numero[i].toInt()){
-                    in 48..57 -> (numero[i].toInt() - 48) * (base1).pow(numero.length - 1 - i)
-                    in 65..89 -> (numero[i].toInt() - 55) * (base1).pow(numero.length - 1 - i)
-                    else -> (numero[i].toInt() - 87) * (base1).pow(numero.length - 1 - i)
-                }
+    //calculo el valor del peso (valor decimal)
+    if(base1 == 10.0){
+        peso = numero.toDouble()
+    }else {
+        var i= numero.length
+        while(i>0) {
+            i--
+            //numbers in 48 .. 57, upper case in 65 .. 89, down case in 97 .. 122
+            peso += when(numero[i].toInt()){
+                in 48..57 -> (numero[i].toInt() - 48) * (base1).pow(numero.length - 1 - i)
+                in 65..89 -> (numero[i].toInt() - 55) * (base1).pow(numero.length - 1 - i)
+                else -> (numero[i].toInt() - 87) * (base1).pow(numero.length - 1 - i)
             }
         }
-
-        //calculo el número convertido
-        if(base2 == 10.0)
-            numeroConvertido = "${peso.toInt()}"
-        else if(numero == "0")
-            numeroConvertido = "0"
-        else{
+    }
+    //calculo el número convertido
+    when {
+        base2 == 10.0 -> numeroConvertido = "${peso.toInt()}"
+        numero == "0" -> numeroConvertido = "0"
+        else -> {
             var posicion = 50.0 // itera desde 50 posiciones a la izquierda
             var agrega = false //no añade los ceros de la izquierda hasta que se añada algún valor distinto de cero
             var valor = 0.0 //el valor del número que se va a añadir en caso de que sea necesario. por ej: valor=15 significa E
@@ -65,9 +68,6 @@ fun main(){
                 }
             }
         }
-
-        //imprime el resultado
-        println("El número $numero de base ${base1.toInt()} a base ${base2.toInt()} es: $numeroConvertido")
     }
-
+    return numeroConvertido
 }
